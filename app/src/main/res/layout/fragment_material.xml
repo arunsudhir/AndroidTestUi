@@ -10,12 +10,34 @@
     tools:showIn="@layout/activity_material"
     tools:context="com.arunsudhir.androidtestui.MaterialActivityFragment">
 
+    <it.gmariotti.cardslib.library.view.CardViewNative
+        android:id="@+id/carddemo_largeimage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card:card_layout_resourceID="@layout/native_material_largeimage_card"
+        style="@style/card_external"
+        />
+<!--
+    <it.gmariotti.cardslib.library.view.CardGridView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnWidth="190dp"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="3dp"
+        android:horizontalSpacing="2dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
+        android:id="@+id/myList"
+        card:card_layout_resourceID="@layout/card_thumbnail"
+        />
 
-    <it.gmariotti.cardslib.library.view.CardListView
+     <it.gmariotti.cardslib.library.view.CardListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/myList"
         card:list_card_layout_resourceID="@layout/list_card"
-        />
+        /> -->
 
 </RelativeLayout>
