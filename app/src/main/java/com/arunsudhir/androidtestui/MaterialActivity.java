@@ -14,6 +14,10 @@ import it.gmariotti.cardslib.library.cards.actions.BaseSupplementalAction;
 import it.gmariotti.cardslib.library.cards.actions.TextSupplementalAction;
 import it.gmariotti.cardslib.library.cards.material.MaterialLargeImageCard;
 import it.gmariotti.cardslib.library.internal.Card;
+import it.gmariotti.cardslib.library.internal.CardArrayAdapter;
+import it.gmariotti.cardslib.library.view.CardGridView;
+import it.gmariotti.cardslib.library.view.CardListView;
+import it.gmariotti.cardslib.library.view.CardViewNative;
 
 public class MaterialActivity extends AppCompatActivity {
 
@@ -23,6 +27,10 @@ public class MaterialActivity extends AppCompatActivity {
         setContentView(R.layout.activity_material);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+
+        ArrayList<Card> cards = new ArrayList<>();
 
 
         // Set supplemental actions as text
@@ -64,8 +72,12 @@ public class MaterialActivity extends AppCompatActivity {
             }
         });
 
-
-
+        cards.add(card);
+        CardArrayAdapter adap = new CardArrayAdapter(this, cards);
+        CardListView gridView = (CardListView) this.findViewById(R.id.myList);
+        if (gridView!=null){
+            gridView.setAdapter(adap);
+        }
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
