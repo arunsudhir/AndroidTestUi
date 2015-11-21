@@ -67,12 +67,13 @@ public class GridActivity extends AppCompatActivity {
         header.setTitle("Best of 2015");
         // Create acard thumbnail
         CardThumbnail ct = new CardThumbnail(this);
-        ct.setUrlResource(baseUrl+cardPath);
+        ct.setUrlResource(baseUrl + cardPath);
 
         //Add Header to card
         card.addCardHeader(header);
         card.addCardThumbnail(ct);
-        return card;
+        card.setTitle("  blah blah");
+          return card;
     }
 
 }
