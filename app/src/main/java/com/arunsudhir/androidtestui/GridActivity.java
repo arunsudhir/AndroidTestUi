@@ -17,6 +17,7 @@ import it.gmariotti.cardslib.library.view.CardGridView;
 
 public class GridActivity extends AppCompatActivity {
 
+    public static String baseUrl = "http://www.mywimbo.com/MalRadio/PlaylistHeroImages/";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,17 +36,17 @@ public class GridActivity extends AppCompatActivity {
 
         ArrayList<Card> cards = new ArrayList<Card>();
 
+        cards.add(addCard("2015_1.jpg"));
+        cards.add(addCard("medley_1.jpg"));
+        cards.add(addCard("jaya_1.jpg"));
+        cards.add(addCard("newly_1.jpg"));
+        cards.add(addCard("vidya_1.jpg"));
+        cards.add(addCard("2013_1.jpg"));
+        cards.add(addCard("2014_1.jpg"));
+        /*cards.add(addCard());
         cards.add(addCard());
         cards.add(addCard());
-        cards.add(addCard());
-        cards.add(addCard());
-        cards.add(addCard());
-        cards.add(addCard());
-        cards.add(addCard());
-        cards.add(addCard());
-        cards.add(addCard());
-        cards.add(addCard());
-        cards.add(addCard());
+        cards.add(addCard());*/
 
 
         CardGridArrayAdapter mCardArrayAdapter = new CardGridArrayAdapter(this,cards);
@@ -56,17 +57,17 @@ public class GridActivity extends AppCompatActivity {
         }
     }
 
-    public Card addCard()
+    public Card addCard(String cardPath)
     {
         //Create a Card
         Card card = new Card(this);
 
         //Create a CardHeader
         CardHeader header = new CardHeader(this);
-
+        header.setTitle("Best of 2015");
         // Create acard thumbnail
         CardThumbnail ct = new CardThumbnail(this);
-        ct.setUrlResource("http://www.mywimbo.com/MalRadio/PlaylistHeroImages/2015_1.jpg");
+        ct.setUrlResource(baseUrl+cardPath);
 
         //Add Header to card
         card.addCardHeader(header);
